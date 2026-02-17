@@ -2,6 +2,12 @@
 # Run locally
 
 ```shell
+# initialize python `uv` environment
+uv venv
+source .venv/bin/activate
+uv sync
+
+# run dev server
 fastapi dev src/ark_root_resolver/main.py
 ```
 
