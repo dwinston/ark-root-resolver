@@ -118,7 +118,9 @@ def update_ark_root_resolver_map():
         {
             record["what"]: record["target"]
             for record in sorted(
-                naan_registry_cache["data"], key=lambda record: len(record["what"])
+                naan_registry_cache["data"],
+                key=lambda record: len(record["what"]),
+                reverse=True,
             )
         }
     )
@@ -152,8 +154,8 @@ async def get_naan_registry_cache():
 
 
 @app.get("/ark_root_resolver_map")
-async def get_naan_registry_cache():
-    """Present the NAAN Registry cache."""
+async def get_ark_root_resolver_map():
+    """Present the ARK root resolver map, derived from the NAAN Registry cache."""
     return ark_root_resolver_map
 
 
